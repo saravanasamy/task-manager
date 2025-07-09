@@ -16,6 +16,14 @@ class TaskService
     }
 
     /**
+     * Get validation service (for API controller access)
+     */
+    public function getValidationService(): TaskValidationService
+    {
+        return $this->validationService;
+    }
+
+    /**
      * Get paginated tasks with filters and sorting
      */
     public function getAllTasks(Request $request): LengthAwarePaginator

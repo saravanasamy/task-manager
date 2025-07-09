@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\TaskService;
 use App\Services\TaskValidationService;
+use App\Services\ApiResponseService;
 use Illuminate\Support\ServiceProvider;
 
 class TaskServiceProvider extends ServiceProvider
@@ -23,6 +24,11 @@ class TaskServiceProvider extends ServiceProvider
             return new TaskService(
                 $app->make(TaskValidationService::class)
             );
+        });
+
+        // Register ApiResponseService as singleton
+        $this->app->singleton(ApiResponseService::class, function ($app) {
+            return new ApiResponseService();
         });
     }
 
