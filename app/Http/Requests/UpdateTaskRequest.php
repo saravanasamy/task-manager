@@ -77,9 +77,9 @@ class UpdateTaskRequest extends FormRequest
     {
         $validator->after(function ($validator) {
             $task = $this->route('task');
-            
+            $taskId = $task ? $task->id : $this->route('id');
             // Add custom validation logic for updates
-            if ($this->title && !$this->validationService->validateTitleUniqueness($this->title, $task->id)) {
+            if ($this->title && $taskId && !$this->validationService->validateTitleUniqueness($this->title, $taskId)) {
                 $validator->errors()->add('title', 'A task with this title already exists.');
             }
         });
