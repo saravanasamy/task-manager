@@ -1,24 +1,47 @@
-*.log
+# Node
+node_modules/
+
+# PHP
+/vendor/
+/.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
-.env
-.env.backup
-.env.production
-.phpactor.json
+Thumbs.db
+
+# Build
+/dist/
+/build/
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Misc
+*.bak
+*.tmp
+
+# Laravel
+/storage/
+/public/storage/
 .phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
 Homestead.json
 Homestead.yaml
-Thumbs.db
+
+# Composer
+composer.lock
+
+# Others
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test
+/test-results/

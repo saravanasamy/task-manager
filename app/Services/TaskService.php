@@ -39,7 +39,9 @@ class TaskService
         // Apply sorting
         $this->applySorting($query, $request);
 
-        return $query->paginate(10)->withQueryString();
+        $perPage = (int) $request->get('per_page', 10);
+        $page = (int) $request->get('page', 1);
+        return $query->paginate($perPage, ['*'], 'page', $page)->withQueryString();
     }
 
     /**
